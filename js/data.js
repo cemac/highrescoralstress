@@ -488,7 +488,7 @@ function load_map() {
 
   /* reef area tiles: */
   var mapbox_tileset = 'thermalstressdata.aoa9t09h';
-  var mapbox_token = 'pk.eyJ1IjoidGhlcm1hbHN0cmVzc2RhdGEiLCJhIjoiY2wwamJqejc4MGF6NzNkdW9kYmQ1b2JicyJ9.yjpZ1YnCHHcc-2rbY4_3FQ';
+  var mapbox_token = 'pk.eyJ1IjoidGhlcm1hbHN0cmVzc2RhdGEiLCJhIjoiY2w1Nnp3MmxqMW84bDNjbzcwenlxeGlmciJ9.cKaOx-VzJSbdKFuVkjo2Pg';
   var layer_reef_area = L.tileLayer(
     'https://api.mapbox.com/v4/' + mapbox_tileset + '/{z}/{x}/{y}.png32?access_token=' + mapbox_token, {
       tms: 0,
