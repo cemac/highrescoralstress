@@ -221,13 +221,13 @@ async function load_map_data(my_region, my_variable, my_period, my_scenario) {
   var new_zoom = map.getZoom();
 
   /* data resolution for this zoom level: */
-  if (new_zoom > 8) {
+  if (new_zoom > 9) {
     new_zoom = 'd';
     var resolution = '0.01';
-  } else if (new_zoom > 5) {
+  } else if (new_zoom > 6) {
     new_zoom = 'c';
     var resolution = '0.1';
-  } else if (new_zoom > 2) {
+  } else if (new_zoom > 3) {
     new_zoom = 'b';
     var resolution = '0.5';
   } else {
