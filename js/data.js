@@ -206,12 +206,6 @@ async function load_map_data(my_region, my_variable, my_period, my_scenario) {
     var resolution = '1';
   };
 
-  /* if region has changed: */
-  if (my_region != region) {
-    /* reset map bounds: */
-    set_map_bounds(my_region);
-  };
-
   /* if data or zoom level has changed, or display_data is false ... : */
   if ((my_region != region) ||
       (my_variable != variable) ||
@@ -430,6 +424,13 @@ async function load_map_data(my_region, my_variable, my_period, my_scenario) {
     };
   /* end if display_data is true: */
   };
+
+  /* if region has changed: */
+  if (my_region != region) {
+    /* reset map bounds: */
+    set_map_bounds(my_region);
+  };
+
   /* store zoom level and data details: */
   zoom_level = new_zoom;
   region = my_region;
