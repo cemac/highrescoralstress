@@ -1,12 +1,20 @@
 'use strict';
 
 /* global variables: */
+
+/* map variables: */
 var map = null;
 var map_title = null;
 var map_colormap = null;
+var map_zooming = false;
+var map_moving = false;
+var map_data_update = false;
+var map_data_updating = false;
 var active_polys = [];
 var active_ids = [];
 var zoom_level = -1;
+
+/* data variables: */
 var data_sets_url = 'https://dl.dropboxusercontent.com/s/z1g4yangpp8xw3f/data_sets.json.zip';
 var data_sets = null;
 var display_data = true;
@@ -15,6 +23,8 @@ var variable = 'prob_dhw_4';
 var period = '1985-2019';
 var scenario = 'observed';
 var source_data_file = null;
+
+/* html variables: */
 var region_sel = document.getElementById('map_control_region');
 var region_selected = null;
 var variable_sel = document.getElementById('map_control_variable');
@@ -180,6 +190,25 @@ function set_map_bounds(data_region) {
 /* function to load map data: */
 async function load_map_data(my_region, my_variable, my_period, my_scenario) {
 
+  /* if map is zooming, moving or already updating ... : */
+  if ((map_zooming == true) || (map_moving == true) ||
+      (map_data_updating == true)) {
+    /* return: */
+    return;
+  };
+
+  /* the map data is updating: */
+  map_data_updating = true;
+
+  /* if a data update has been requested: */
+  if (map_data_update == true) {
+     var my_region = region_selected;
+     var my_variable = variable_selected;
+     var my_period = period_selected;
+     var my_scenario = scenario_selected;
+  };
+  map_data_update = false;
+
   /* if arguments not specified, use default: */
   var my_region = (my_region == undefined) ? region : my_region;
   var my_variable = (my_variable == undefined) ? variable : my_variable;
@@ -192,13 +221,13 @@ async function load_map_data(my_region, my_variable, my_period, my_scenario) {
   var new_zoom = map.getZoom();
 
   /* data resolution for this zoom level: */
-  if (new_zoom > 9) {
+  if (new_zoom > 8) {
     new_zoom = 'd';
     var resolution = '0.01';
-  } else if (new_zoom > 6) {
+  } else if (new_zoom > 5) {
     new_zoom = 'c';
     var resolution = '0.1';
-  } else if (new_zoom > 3) {
+  } else if (new_zoom > 2) {
     new_zoom = 'b';
     var resolution = '0.5';
   } else {
@@ -228,12 +257,9 @@ async function load_map_data(my_region, my_variable, my_period, my_scenario) {
     for (var i = 0; i < active_polys.length; i++) {
       /* get polygon coordinates: */
       var active_poly = active_polys[i];
-      var active_poly_ll = active_poly.getLatLngs()[0];
+      var active_poly_ll = active_poly.getLatLngs();
       /* if polygon is in bounds, keep, else remove: */
-      if ((map_bounds.contains(active_poly_ll[0])) ||
-          (map_bounds.contains(active_poly_ll[1])) ||
-          (map_bounds.contains(active_poly_ll[2])) ||
-          (map_bounds.contains(active_poly_ll[3]))) {
+      if (map_bounds.overlaps(active_poly_ll)) {
         new_polys.push(active_poly);
         new_ids.push(active_poly.id);
       } else {
@@ -425,18 +451,15 @@ async function load_map_data(my_region, my_variable, my_period, my_scenario) {
   /* end if display_data is true: */
   };
 
-  /* if region has changed: */
-  if (my_region != region) {
-    /* reset map bounds: */
-    set_map_bounds(my_region);
-  };
-
   /* store zoom level and data details: */
   zoom_level = new_zoom;
   region = my_region;
   variable = my_variable;
   period = my_period;
   scenario = my_scenario;
+
+  /* map has finished updating: */
+  map_data_updating = false;
 };
 
 /* map loading function: */
@@ -569,13 +592,25 @@ function load_map() {
   /* load the data: */
   map.addLayer(layer_data);
 
-  /* reload data on map zoom: */
+  /* store zooming status on zoom: */
+  map.on('zoomstart', function() {
+    map_zooming = true;
+  });
+
+  /* store moving status on move: */
+  map.on('movestart', function() {
+    map_moving = true;
+  });
+
+  /* reload data on map zoom complete: */
   map.on('zoomend', function() {
+    map_zooming = false;
     load_map_data();
   });
 
-  /* reload data on map move: */
+  /* reload data on map move complete: */
   map.on('moveend', function() {
+    map_moving = false;
     load_map_data();
   });
 
@@ -725,6 +760,13 @@ function update_download_link(region_selected) {
 
 /* function to display data via display button: */
 function display_map_data() {
+  /* a map data update has been requested: */
+  map_data_update = true;
+  /* if region has changed: */
+  if (region_selected != region) {
+    /* reset map bounds: */
+    set_map_bounds(region_selected);
+  };
   /* update the map: */
   load_map_data(region_selected, variable_selected, period_selected,
                 scenario_selected);
