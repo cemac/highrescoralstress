@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<!-- html start: __________________________________________________________ -->
+<html>
+  <!-- head start:_________________________________________________________ -->
+  <head>
+    <meta http-equiv="content-type"
+          content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1">
+    <link rel="icon"
+          href="icon.png"
+          sizes="192x192">
+    <!-- title: ___________________________________________________________ -->
+    <title>HighResCoralStress - Home</title>
+    <!-- styles: __________________________________________________________ -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/site.css"
+          media="all">
+    <!-- scripts: _________________________________________________________ -->
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-S1WX7WSCQG">
+    </script>
+    <script src="js/ga.js"
+            charset="utf-8"
+            defer>
+    </script>
+    <script src="js/site.js"
+            charset="utf-8"
+            defer>
+    </script>
+  <!-- head end:___________________________________________________________ -->
+  </head>
+  <!-- body start: ________________________________________________________ -->
+  <body>
+    <!-- container start: _________________________________________________ -->
+    <div id="container"
+         class="container column">
+      <!-- header: ________________________________________________________ -->
+      <div id="header"
+           class="header row flex_start flex_no_grow">
+        <div id="header_text"
+             class="header_text">
+          HighResCoralStress
+        </div>
+      </div>
+      <!-- navigation: ____________________________________________________ -->
+      <div id="navigation"
+           class="navigation row flex_no_grow">
+        <div id="navigation_text"
+             class="navigation_text flex_start row">
+          <div class="navigation_item navigation_item_current">
+            <a class="navigation_text_current"
+               href="index.html">Home</a>
+          </div><div class="navigation_item">
+            <a href="data.html">Data</a>
+          </div><div class="navigation_item">
+            <a href="code.html">Code</a>
+          </div><div class="navigation_item">
+            <a href="publications.html">Publications</a>
+          </div><div class="navigation_item">
+            <a href="impact.html">Impact</a>
+          </div>
+        </div>
+        <div id="navigation_menu"
+             class="navigation_menu">
+          <img id="navigation_menu_img"
+               alt=""
+               class="navigation_menu_img"
+               src="img/navigation/menu.png">
+        </div>
+      </div>
+      <!-- content: _______________________________________________________ -->
+      <div id="content"
+           class="content column">
+        <!-- header image: ________________________________________________ -->
+        <div id="content_header"
+             class="content_header">
+          <img src="img/header/coral.jpg"
+               class="content_header_img"
+               title="Image courtesy of The Ocean Agency / Ocean Image Bank">
+          <div id="content_header_image_text"
+               class="content_header_image_text row flex_end">
+            The Ocean Agency / Ocean Image Bank
+          </div>
+        </div>
+        <!-- overview: ____________________________________________________ -->
+        <div class="row_wrap flex_no_grow">
+          <div class="content_overview_heading">
+            Home
+          </div>
+        </div>
+        <div id="content_overview"
+             class="content_row row_wrap flex_justify">
+          <div id="content_introduction_text_00"
+               class="content_text column flex_400">
+            <p class="content_text_bold">
+              HighResCoralStress is a statistically downscaled thermal stress dataset at 0.01° / 1 km spatial resolution for 420,334 global coral reef pixels for historical (1985-2019) and future (2020-2100) time periods. The methodology for generating the HighResCoralStress dataset is detailed in the following <a href="https://doi.org/10.1371/journal.pclm.0000004">PLOS Climate paper</a>.
+            </p>
+            <p>
+              We provide five thermal stress metrics which can be visualised and downloaded on the Data page. Thermal stress datasets can be visualised by selecting layers on the left-hand side of the map (e.g. metric, time period, emissions scenario).
+            </p>
+          </div>
+          <div id="content_introduction_text_01"
+               class="content_text column flex_400">
+            <p>
+              Users of the HighResCoralStress data are required to cite:
+            </p>
+            <p class="content_reference">
+              Dixon, A.M, Forster, P.M., Heron, S.F., Stoner, A.M.K., Beger, M. (2021). Future loss of local-scale thermal refugia in coral reef ecosystems. PLOS Climate, 1(2), e0000004, doi: <a href="https://doi.org/10.1371/journal.pclm.0000004">10.1371/journal.pclm.0000004</a>
+            </p>
+          </div>
+        </div>
+        <!-- metrics table: _______________________________________________ -->
+        <div id="content_metrics_00"
+             class="content_text column">
+          <h4>Thermal stress metrics</h4>
+          <p>
+            Thermal stress metrics available to download on the <a href="data.html">Data</a> page:
+          </p>
+          <!-- prob_dhw_4: ________________________________________________ -->
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_a1">
+            <h5 class="handle">
+              <label for="handle_a1">prob_dhw_4</label>
+            </h5>
+            <div class="collapse_content">
+              <span>
+                Probability of thermal stress events of Degree Heating Week (DHW) values &gt; 4°C-weeks
+              </span>
+              <h5>Description</h5>
+              <span>
+                The number of events with DHW &gt; 4°C-week divided by the total number of years. DHW is the sum of SST anomalies 1°C higher than the long-term maximum monthly mean (MMM) over a 12-week period calculated following the method by <a href="https://coralreefwatch.noaa.gov/product/5km/methodology.php#dhw">NOAA Coral Reef Watch</a>.
+              </span>
+              <h5>Reference</h5>
+              <span>
+                <a href="https://doi.org/10.1371/journal.pone.0005712">Donner et al. (2009)</a>, <a href="https://doi.org/10.1038/nclimate1674">Frieler et al. (2013)</a>, <a href="https://doi.org/10.5194/esd-7-327-2016">Schleussner et al. (2016)</a>, <a href="https://doi.org/10.1371/journal.pclm.0000004">Dixon et al. (2022)</a>
+              </span>
+              <h5>Time period</h5>
+              <span>
+                Observed: 1985-2019, Projected: 2021-2040, 2041-2060, 2061-2080, 2081-2100
+              </span>
+              <h5>Emissions scenario</h5>
+              <span>
+                SSP1 2.6, SSP2 4.5, SSP3 7.0, SSP5 8.5
+              </span>
+            </div>
+          </section>
+          <!-- prob_dhw_8: ________________________________________________ -->
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_a2">
+            <h5 class="handle">
+              <label for="handle_a2">prob_dhw_8</label>
+            </h5>
+            <div class="collapse_content">
+              <span>
+                Probability of thermal stress events of Degree Heating Week (DHW) values &gt; 8°C-weeks
+              </span>
+              <h5>Description</h5>
+              <span>
+                The number of events with DHW &gt; 8°C-week divided by the total number of years. DHW is the sum of SST anomalies 1°C higher than the long-term maximum monthly mean (MMM) over a 12-week period calculated following the method by <a href="https://coralreefwatch.noaa.gov/product/5km/methodology.php#dhw">NOAA Coral Reef Watch</a>.
+              </span>
+              <h5>Reference</h5>
+              <span>
+                <a href="https://doi.org/10.1371/journal.pone.0005712">Donner et al. (2009)</a>, <a href="https://doi.org/10.1038/nclimate1674">Frieler et al. (2013)</a>, <a href="https://doi.org/10.5194/esd-7-327-2016">Schleussner et al. (2016)</a>, <a href="https://doi.org/10.1371/journal.pclm.0000004">Dixon et al. (2022)</a>
+              </span>
+              <h5>Time period</h5>
+              <span>
+                Observed: 1985-2019, Projected: 2021-2040, 2041-2060, 2061-2080, 2081-2100
+              </span>
+              <h5>Emissions scenario</h5>
+              <span>
+                SSP1 2.6, SSP2 4.5, SSP3 7.0, SSP5 8.5
+              </span>
+            </div>
+          </section>
+          <!-- seas_sst_var: ______________________________________________ -->
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_a3">
+            <h5 class="handle">
+              <label for="handle_a3">seas_sst_var</label>
+            </h5>
+            <div class="collapse_content">
+              <span>
+                Seasonal SST variability (°C)
+              </span>
+              <h5>Description</h5>
+              <span>
+                Root mean square (RMS) of spectral energy in the seasonal band (0.5-1 year) calculated by transforming monthly SST into frequency bands using Fourier transform.
+              </span>
+              <h5>Reference</h5>
+              <span>
+                <a href="https://doi.org/10.1038/nclimate3399">Langlais et al. (2017)</a>, <a href="https://doi.org/10.1371/journal.pclm.0000004">Dixon et al. (2022)</a>
+              </span>
+              <h5>Time period</h5>
+              <span>
+                Observed: 1985-2019
+              </span>
+              <h5>Emissions scenario</h5>
+              <span>
+                N/A
+              </span>
+            </div>
+          </section>
+          <!-- int_sst_var: _______________________________________________ -->
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_a4">
+            <h5 class="handle">
+              <label for="handle_a4">int_sst_var</label>
+            </h5>
+            <div class="collapse_content">
+              <span>
+                Inter-annual SST variability (°C)
+              </span>
+              <h5>Description</h5>
+              <span>
+                Root mean square (RMS) of spectral energy in the for the inter-annual band (3-8 year) calculated by transforming monthly SST into frequency bands using Fourier transform.
+              </span>
+              <h5>Reference</h5>
+              <span>
+                <a href="https://doi.org/10.1038/nclimate3399">Langlais et al. (2017)</a>, <a href="https://doi.org/10.1371/journal.pclm.0000004">Dixon et al. (2022)</a>
+              </span>
+              <h5>Time period</h5>
+              <span>
+                Observed: 1985-2019
+              </span>
+              <h5>Emissions scenario</h5>
+              <span>
+                N/A
+              </span>
+            </div>
+          </section>
+          <!-- trend_ann_sst: ______________________________________________ -->
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_a5">
+            <h5 class="handle">
+              <label for="handle_a5">trend_ann_sst</label>
+            </h5>
+            <div class="collapse_content">
+              <span>
+                Trend in SST (°C/year)
+              </span>
+              <h5>Description</h5>
+              <span>
+                Slope for feasible generalised least squares model fit to annual mean SST with autocorrelation structure of 1. The p value (p_value) is also reported.
+              </span>
+              <h5>Reference</h5>
+              <span>
+                <a href="https://doi.org/10.1111/gcb.16167">Chollet et al. (2022)</a>
+              </span>
+              <h5>Time period</h5>
+              <span>
+                Observed: 1985-2019, Projected: 2021-2040, 2041-2060, 2061-2080, 2081-2100
+              </span>
+              <h5>Emissions scenario</h5>
+              <span>
+                SSP1 2.6, SSP2 4.5, SSP3 7.0, SSP5 8.5
+              </span>
+            </div>
+          </section>
+        </div>
+        <!-- acknowledgements: ____________________________________________ -->
+        <div id="content_acknowledgements_00"
+             class="content_text column">
+          <h4>Acknowledgements</h4>
+          <p>
+            The authors thank all the data providers whose datasets have fed into HighResCoralStress including the following observed datasets:
+          </p>
+          <!-- mur sst: ____________________________________________________ -->
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_b1">
+            <h5 class="handle">
+              <label for="handle_b1">MUR SST Analysis daily version 4.1</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Source:</span> Group for High Resolution Sea Surface Temperature at NASA Jet Propulsion Laboratory</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.1016/j.rse.2017.07.029">Chin et al. (2017)</a></p>
+              <p><span class="content_dataset_label">DOI:</span> <a href="https://doi.org/10.5067/GHGMR-4FJ04">10.5067/GHGMR-4FJ04</a></p>
+            </div>
+          </section>
+          <!-- cci sst: ____________________________________________________ -->
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_b2">
+            <h5 class="handle">
+              <label for="handle_b2">CCI daily SST version 2.1</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Source:</span> ESA SST CCI</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.1038/s41597-019-0236-x">Merchant et al. (2019)</a></p>
+              <p><span class="content_dataset_label">DOI:</span> <a href="https://doi.org/10.5285/916b93aaf1474ce793171a33ca4c5026">10.5285/916b93aaf1474ce793171a33ca4c5026</a>, <a href="https://doi.org/10.5285/373638ed9c434e78b521cbe01ace5ef7">10.5285/373638ed9c434e78b521cbe01ace5ef7</a>, <a href="https://doi.org/10.5285/2282b4aeb9f24bc3a1e0961e4d545427">10.5285/2282b4aeb9f24bc3a1e0961e4d545427</a>, <a href="https://doi.org/10.5285/42f7230ab55641cdac1bba84eabd446a">10.5285/42f7230ab55641cdac1bba84eabd446a</a>, <a href="https://doi.org/10.5285/5db2099606b94e63879d841c87e654ae">10.5285/5db2099606b94e63879d841c87e654ae</a>, <a href="https://doi.org/10.5285/7db4459605da4665b6ab9a7102fb4875">10.5285/7db4459605da4665b6ab9a7102fb4875</a>, <a href="https://doi.org/10.5285/62c0f97b1eac4e0197a674870afe1ee6">10.5285/62c0f97b1eac4e0197a674870afe1ee6</a></p>
+            </div>
+          </section>
+          <!-- coraltemp sst: ______________________________________________ -->
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_b3">
+            <h5 class="handle">
+              <label for="handle_b3">CoralTemp daily SST version 3.1</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Source:</span> NOAA Coral Reef Watch</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://coralreefwatch.noaa.gov/product/5km/">NOAA Coral Reef Watch (2018)</a></p>
+            </div>
+          </section>
+          <!-- global distribution: ________________________________________ -->
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_b4">
+            <h5 class="handle">
+              <label for="handle_b4">Global distribution of coral reefs</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Source:</span> UNEP-WCMC, WorldFish Centre, WRI, TNC</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://data.unep-wcmc.org/datasets/1">UNEP-WCMC, WorldFish Centre, WRI, TNC, (2010)</a></p>
+              <p><span class="content_dataset_label">DOI:</span> <a href="https://doi.org/10.34892/t2wk-5t34">10.34892/t2wk-5t34</a></p>
+            </div>
+          </section>
+        </div>
+        <div class="content_row row_wrap flex_justify">
+          <div class="content_text column flex_400">
+            <p>
+              The authors acknowledge the World Climate Research Programme, which, through its Working Group on Coupled Modelling, coordinated and promoted CMIP6. The authors thank the climate modelling groups for producing and making available their model output, the Earth System Grid Federation (ESGF) for archiving the data and providing access, and the multiple funding agencies who support CMIP6 and ESGF.
+            </p>
+          </div>
+          <div class="content_text column flex_400">
+            <p>
+              Historical, SSP1-2.6, SSP2-4.5, SSP3-7.0 and SSP5-8.5 r1i1p1f1 simulations were used for all models except NESM3 (no SSP3-7.0 available at time of download) and GFDL-CM4 (no SSP1-2.6 and SSP3-7.0 available at time of download).
+            </p>
+          </div>
+        </div>
+        <div id="content_acknowledgements_01"
+             class="content_text column">
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c1">
+            <h5 class="handle">
+              <label for="handle_c1">ACCESS-CM2</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> CSIRO</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.1071/ES19040">Bi et al. (2020)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c2">
+            <h5 class="handle">
+              <label for="handle_c2">ACCESS-ESM1-5</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> CSIRO</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.1071/ES19035">Ziehn et al. (2020)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c3">
+            <h5 class="handle">
+              <label for="handle_c3">BCC-CSM2-MR</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> BCC</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.5194/gmd-12-1573-2019">Wu et al. (2019)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c4">
+            <h5 class="handle">
+              <label for="handle_c4">CanESM5</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> CCCma</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.5194/gmd-12-4823-2019">Swart et al. (2019)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c5">
+            <h5 class="handle">
+              <label for="handle_c5">CESM2-WACCM</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> NCAR</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.1029/2019MS001916">Danabasoglu et al (2020)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c6">
+            <h5 class="handle">
+              <label for="handle_c6">CMCC-CM2-SR5</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> CMCC</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.1029/2018MS001369">Cherchi et al. (2019)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c7">
+            <h5 class="handle">
+              <label for="handle_c7">EC-Earth3</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> EC-Earth-Consortium</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.5194/gmd-15-2973-2022">Döscher et al. (2021)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c8">
+            <h5 class="handle">
+              <label for="handle_c8">EC-Earth3-Veg</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> EC-Earth-Consortium</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.5194/gmd-13-3465-2020">Wyser et al. (2020)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c9">
+            <h5 class="handle">
+              <label for="handle_c9">GFDL-CM4</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> NOAA-GFDL</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.1029/2019MS001829">Held et al. (2019)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c10">
+            <h5 class="handle">
+              <label for="handle_c10">IPSL-CM6A-LR</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> IPSL</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.1029/2019MS002010">Boucher et al. (2020)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c11">
+            <h5 class="handle">
+              <label for="handle_c11">MPI-ESM1-2-HR</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> MPI-M</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.1029/2017MS001217">Müller et al. (2018)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c12">
+            <h5 class="handle">
+              <label for="handle_c12">MRI-ESM2-0</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> MRI</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.2151/jmsj.2019-051">Yukimoto et al. (2019)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c13">
+            <h5 class="handle">
+              <label for="handle_c13">NESM3</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> NUIST</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.5194/gmd-11-2975-2018">Cao et al. (2018)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c14">
+            <h5 class="handle">
+              <label for="handle_c14">NorESM2-LM</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> NCC</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.5194/gmd-13-6165-2020">Seland et al. (2020)</a></p>
+            </div>
+          </section>
+          <section class="drop_down">
+            <input type="checkbox"
+                   name="collapse"
+                   id="handle_c15">
+            <h5 class="handle">
+              <label for="handle_c15">NorESM2-MM</label>
+            </h5>
+            <div class="collapse_content content_dataset">
+              <p><span class="content_dataset_label">Insitute:</span> NCC</p>
+              <p><span class="content_dataset_label">Reference:</span> <a href="https://doi.org/10.5194/gmd-13-6165-2020">Seland et al. (2020)</a></p>
+            </div>
+          </section>
+        </div>
+        <!-- contact: _____________________________________________________ -->
+        <div id="content_contact_00"
+             class="content_text column">
+          <h4>Contact</h4>
+          <p>
+            If you have any enquiries, please contact Maria Beger at M.Beger@leeds.ac.uk.
+          </p>
+        </div>
+        <span class="content_vertical_space_2"></span>
+      </div>
+      <!-- full screen image div: _________________________________________ -->
+      <div id="fs_img_div"
+           class="fs_img_div">
+        <span id="fs_img_close"
+              class="fs_img_close">&times;</span>
+        <img id="fs_img_img"
+             class="fs_img_img"
+             src="">
+      </div>
+      <!-- footer: ________________________________________________________ -->
+      <div id="footer"
+           class="footer row_wrap flex_justify flex_no_grow">
+        <div id="footer_nerc_logo"
+             class="footer_item">
+          <img class="footer_logo"
+               src="img/logo/nerc_logo.png">
+        </div>
+        <div id="footer_jcu_logo"
+             class="footer_item">
+          <img class="footer_logo"
+               src="img/logo/jcu_logo.png">
+        </div>
+        <div id="footer_tt_logo"
+             class="footer_item">
+          <img class="footer_logo"
+               src="img/logo/tt_logo.png">
+        </div>
+        <div id="footer_uol_logo"
+             class="footer_item">
+          <img class="footer_logo"
+               src="img/logo/uol_logo.png">
+        </div>
+      </div>
+    <!-- container end: ___________________________________________________ -->
+    </div>
+  <!-- body end: __________________________________________________________ -->
+  </body>
+<!-- html end: ____________________________________________________________ -->
+</html>

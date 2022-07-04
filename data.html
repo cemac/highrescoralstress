@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- html start: __________________________________________________________ -->
+<html>
+  <!-- head start:_________________________________________________________ -->
+  <head>
+    <meta http-equiv="content-type"
+          content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1">
+    <link rel="icon"
+          href="icon.png"
+          sizes="192x192">
+    <!-- title: ___________________________________________________________ -->
+    <title>HighResCoralStress - Data</title>
+    <!-- styles: __________________________________________________________ -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/site.css"
+          media="all">
+    <!-- scripts: _________________________________________________________ -->
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-S1WX7WSCQG">
+    </script>
+    <script src="js/ga.js"
+            charset="utf-8"
+            defer>
+    </script>
+    <script src="js/zip.min.js"
+            charset="utf-8">
+    </script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            charset="utf-8">
+    </script>
+    <script src="js/downloads.js"
+            charset="utf-8">
+    </script>
+    <script src="js/data.js"
+            charset="utf-8"
+            defer>
+    </script>
+    <script src="js/site.js"
+            charset="utf-8"
+            defer>
+    </script>
+  <!-- head end:___________________________________________________________ -->
+  </head>
+  <!-- body start: ________________________________________________________ -->
+  <body>
+    <!-- container start: _________________________________________________ -->
+    <div id="container"
+         class="container column">
+      <!-- header: ________________________________________________________ -->
+      <div id="header"
+           class="header row flex_start flex_no_grow">
+        <div id="header_text"
+             class="header_text">
+          HighResCoralStress
+        </div>
+      </div>
+      <!-- navigation: ____________________________________________________ -->
+      <div id="navigation"
+           class="navigation row flex_no_grow">
+        <div id="navigation_text"
+             class="navigation_text flex_start row">
+          <div class="navigation_item">
+            <a href="index.html">Home</a>
+          </div><div class="navigation_item navigation_item_current">
+            <a class="navigation_text_current"
+               href="data.html">Data</a>
+          </div><div class="navigation_item">
+            <a href="code.html">Code</a>
+          </div><div class="navigation_item">
+            <a href="publications.html">Publications</a>
+          </div><div class="navigation_item">
+            <a href="impact.html">Impact</a>
+          </div>
+        </div>
+        <div id="navigation_menu"
+             class="navigation_menu">
+          <img id="navigation_menu_img"
+               alt=""
+               class="navigation_menu_img"
+               src="img/navigation/menu.png">
+        </div>
+      </div>
+      <!-- content: _______________________________________________________ -->
+      <div id="content"
+           class="content column">
+        <!-- data map: ____________________________________________________ -->
+        <div id="map"
+             class="content_map flex_grow">
+          <div id="map_controls"
+               class="map_controls">
+            <a href="javascript:void(0)"
+               class="map_controls_close"
+               onclick="map_controls_toggle()">&times;</a>
+            <div class="map_control">
+              <p>
+                <label class="map_control_label">Region</label>
+              </p>
+              <select id="map_control_region"
+                      class="map_control_select">
+              </select>
+            </div>
+            <div class="map_control">
+              <p>
+                <label class="map_control_label">Variable</label>
+              </p>
+              <select id="map_control_variable"
+                      class="map_control_select">
+              </select>
+            </div>
+            <div class="map_control">
+              <p>
+                <label class="map_control_label">Period</label>
+              </p>
+              <select id="map_control_period"
+                      class="map_control_select">
+              </select>
+            </div>
+            <div class="map_control">
+              <p>
+                <label class="map_control_label">Scenario</label>
+              </p>
+              <select id="map_control_scenario"
+                      class="map_control_select">
+              </select>
+            </div>
+            <div class="map_control">
+              <button id="map_control_display"
+                      class="map_control_button">
+                display data
+              </button>
+            </div>
+            <div id="map_data_download"
+                 class="map_control">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- full screen image div: _________________________________________ -->
+      <div id="fs_img_div"
+           class="fs_img_div">
+        <span id="fs_img_close"
+              class="fs_img_close">&times;</span>
+        <img id="fs_img_img"
+             class="fs_img_img"
+             src="">
+      </div>
+      <!-- footer: ________________________________________________________ -->
+      <div id="footer"
+           class="footer row_wrap flex_justify flex_no_grow">
+        <div id="footer_nerc_logo"
+             class="footer_item">
+          <img class="footer_logo"
+               src="img/logo/nerc_logo.png">
+        </div>
+        <div id="footer_jcu_logo"
+             class="footer_item">
+          <img class="footer_logo"
+               src="img/logo/jcu_logo.png">
+        </div>
+        <div id="footer_tt_logo"
+             class="footer_item">
+          <img class="footer_logo"
+               src="img/logo/tt_logo.png">
+        </div>
+        <div id="footer_uol_logo"
+             class="footer_item">
+          <img class="footer_logo"
+               src="img/logo/uol_logo.png">
+        </div>
+      </div>
+    <!-- container end: ___________________________________________________ -->
+    </div>
+  <!-- body end: __________________________________________________________ -->
+  </body>
+<!-- html end: ____________________________________________________________ -->
+</html>
