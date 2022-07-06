@@ -652,7 +652,8 @@ button, button:focus, button:active {
 }
 
 .footer_text {
-  padding: 0.5em;
+  font-size: 0.9em;
+  padding: 0.6em;
 }
 
 .footer_item {
