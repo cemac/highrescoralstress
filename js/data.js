@@ -15,10 +15,10 @@ var active_ids = [];
 var zoom_level = -1;
 
 /* data variables: */
-var data_sets_url = 'https://dl.dropboxusercontent.com/s/z1g4yangpp8xw3f/data_sets.json.zip';
+var data_sets_url = 'https://dl.dropboxusercontent.com/s/dwkeosdjbo2f5xe/data_sets.json.zip';
 var data_sets = null;
 var display_data = true;
-var region = 'Australia';
+var region = 'Global';
 var variable = 'prob_dhw_4';
 var period = '1985-2019';
 var scenario = 'observed';
@@ -785,6 +785,17 @@ function setup_map_controls() {
   /* region ... get available regions: */
   var all_regions = Object.keys(data_sets);
   all_regions.sort();
+  /* move 'Global' to start: */
+  if (all_regions.indexOf('Global') > -1) {
+    var new_regions = ['Global'];
+    for (var i = 0; i < all_regions.length; i++) {
+      var this_region = all_regions[i];
+      if (this_region != 'Global') {
+        new_regions.push(this_region);
+      };
+    };
+    all_regions = new_regions;
+  };
   /* add select elements: */
   var my_html = '';
   for (var i = 0; i < all_regions.length; i++) {
