@@ -652,7 +652,7 @@ button, button:focus, button:active {
 }
 
 .footer_text {
-  padding: 5px;
+  padding: 0.5em;
 }
 
 .footer_item {
