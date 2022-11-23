@@ -15,7 +15,9 @@ var active_ids = [];
 var zoom_level = -1;
 
 /* data variables: */
-var data_sets_url = 'https://dl.dropboxusercontent.com/s/dwkeosdjbo2f5xe/data_sets.json.zip';
+var data_sets_url = 'https://dl.dropboxusercontent.com/s/l0i72juitdrfs3d/data_sets.json.zip';
+var data_sets_prefix = 'https://dl.dropboxusercontent.com/s/'
+var data_sets_suffix = '?dl=1'
 var data_sets = null;
 var display_data = true;
 var region = 'Global';
@@ -40,6 +42,7 @@ var download_div = document.getElementById('map_data_download');
 var default_colormap = {
   'min': 0.0,
   'max': 1.0,
+  'decimals': 1,
   'colors': [
     '#1400ff', '#0064ff', '#00dbff', '#00ffac', '#00ff36',
     '#46ff00', '#bdff00', '#ffca00', '#ff5300', '#ff0029'
@@ -49,18 +52,39 @@ var default_colormap = {
 /* variable specific colour maps: */
 var colormaps = {
   'int_sst_var': {
-    'min': 0,
-    'max': 0.5,
+    'min': 0.0,
+    'max': 1.0,
+    'decimals': 1,
+    'colors': default_colormap['colors']
+  },
+  'mmm': {
+    'min': 20.0,
+    'max': 40.0,
+    'decimals': 0,
+    'colors': default_colormap['colors']
+  },
+  'no_dhw_days_4': {
+    'min': 0.0,
+    'max': 7500.0,
+    'decimals': 0,
+    'colors': default_colormap['colors']
+  },
+  'no_dhw_days_8': {
+    'min': 0.0,
+    'max': 7500.0,
+    'decimals': 0,
     'colors': default_colormap['colors']
   },
   'seas_sst_var': {
-    'min': 0.5,
-    'max': 3.5,
+    'min': 0.0,
+    'max': 6.0,
+    'decimals': 1,
     'colors': default_colormap['colors']
   },
   'trend_ann_sst': {
-    'min': -0.1,
-    'max': 0.1,
+    'min': -0.02,
+    'max': 0.08,
+    'decimals': 2,
     'colors': default_colormap['colors']
   }
 };
@@ -157,6 +181,7 @@ function draw_colormap(data_var) {
   var data_min = colormap['min'];
   var data_max = colormap['max'];
   var data_colors = colormap['colors'];
+  var data_decimals = colormap['decimals'];
   /* number of colours: */
   var color_count = data_colors.length;
   /* work out increment for color values: */
@@ -166,8 +191,18 @@ function draw_colormap(data_var) {
   for (var i = (color_count - 1); i > -1; i--) {
     var my_html = '<p>';
     my_html += '<span class="map_colormap_color" style="background: ' + data_colors[i] + ';"></span>';
-    my_html += '<span class="map_colormap_value">' + (data_min + (i * color_inc)).toFixed(2) + ' to ';
-    my_html += (data_min + ((i + 1) * color_inc)).toFixed(2) + '</span>';
+    my_html += '<span class="map_colormap_value">';
+    if (i == (color_count - 1)) {
+      my_html += '&gt;= ' + (data_min + (i * color_inc)).toFixed(data_decimals);
+    } else {
+      if (i == 0) {
+        my_html += '&lt; ';
+      } else {
+        my_html += (data_min + (i * color_inc)).toFixed(data_decimals) + ' &lt; ';
+      };
+      my_html += (data_min + ((i + 1) * color_inc)).toFixed(data_decimals);
+    };
+    my_html += '</span>';
     my_html += '</p>';
     colormap_html += my_html;
   };
@@ -299,7 +334,9 @@ async function load_map_data(my_region, my_variable, my_period, my_scenario) {
 
       /* retrieve the data if not yet fetched: */
       if (data_file['data'] == 'null') {
-        let fetch_response = await fetch(data_file['path'], {
+        var data_file_url = data_sets_prefix + data_file['path'] +
+                            data_sets_suffix;
+        let fetch_response = await fetch(data_file_url, {
           'cache': 'force-cache'
         });
         /* get the zip data as blob: */

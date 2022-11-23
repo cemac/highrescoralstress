@@ -529,6 +529,7 @@ button, button:focus, button:active {
 .map_colormap p {
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 
 .map_colormap_color {
@@ -543,8 +544,7 @@ button, button:focus, button:active {
 .map_colormap_value {
   display: inline-block;
   vertical-align: text-bottom;
-  text-align: center;
-  min-width: 6em;
+  text-align: left;
 }
 
 /** map controls: **/
