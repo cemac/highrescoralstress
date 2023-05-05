@@ -260,14 +260,39 @@ button, button:focus, button:active {
 
 .header {
   background-color: #00376e;
-  height: 90px;
+  height: 165px;
+}
+
+.header a {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0,
 }
 
 .header_text {
   color: #ffffff;
   font-size: 1.6em;
-  margin-top: 1.2em;
+  margin-top: auto;
+  margin-bottom: 0.5em;
   margin-left: 0.5em;
+}
+
+@media only screen and (max-width: 750px) {
+  #header_text {
+    display: none;
+  }
+}
+
+.header_logo {
+  margin-left: auto;
+}
+
+.header_logo_img {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  max-height: 160px;
+  max-width: 280px;
 }
 
 /** navigation: **/
@@ -328,7 +353,7 @@ button, button:focus, button:active {
     padding: 0em;
     position: absolute;
     left: 0em;
-    top: calc(90px + 30px + 1.4em);
+    top: calc(165px + 30px + 1.4em);
     z-index: 9999;
     background-color: #00275e;
   }
